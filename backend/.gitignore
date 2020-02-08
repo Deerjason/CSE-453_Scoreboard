@@ -1,0 +1,7 @@
+# Cache and Database
+*.pyc
+/__pycache__/
+db.sqlite3
+
+# Migration files
+0***_*

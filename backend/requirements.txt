@@ -1,0 +1,4 @@
+# Django
+django==2.2                     # Backend Framework
+djangorestframework==3.10.1     # API Infrastructure
+django-cors-headers==3.0.2      # Backend Security
