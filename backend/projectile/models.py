@@ -6,7 +6,7 @@ class Projectile(models.Model):
     acceleration = models.DecimalField(max_digits=10, decimal_places=5)
     hang_time = models.DecimalField(max_digits=10, decimal_places=5)
     bounce_height = models.DecimalField(max_digits=10, decimal_places=5)
-    score = models.DecimalField(max_digits=10, decimal_places=5)
+    score = models.DecimalField(max_digits=12, decimal_places=6)
 
     class Meta:
         ordering = ("identity",)

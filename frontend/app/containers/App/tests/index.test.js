@@ -1,14 +1,19 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import ShallowRenderer from 'react-test-renderer/shallow';
-
+import configureMockStore from 'redux-mock-store';
 import App from '../index';
+
+const mockStore = configureMockStore();
+const store = mockStore({});
 
 const renderer = new ShallowRenderer();
 
-describe('<App />', () => {
-  it('should render and match the snapshot', () => {
-    renderer.render(<App />);
-    const renderedOutput = renderer.getRenderOutput();
-    expect(renderedOutput).toMatchSnapshot();
-  });
+test('<App />', () => {
+  const page = renderer.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+  );
+  expect(page).toMatchSnapshot();
 });
