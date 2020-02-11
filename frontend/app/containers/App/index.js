@@ -10,16 +10,25 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
+
+import {
+  CreateProjectile,
+  Projectile,
+  Leaderboards,
+  Settings,
+} from '../pageListAsync';
 
 export default function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={CreateProjectile} />
+        <Route exact path="/projectile/:identity" component={Projectile} />
+        <Route exact path="/leaderboards" component={Leaderboards} />
+        <Route exact path="/settings" component={Settings} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
